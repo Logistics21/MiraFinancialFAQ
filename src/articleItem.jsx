@@ -1,7 +1,12 @@
 import React from 'react';
 
 function expandArticle(e) {
-
+  let className = e.currentTarget.className;
+  if (className.includes("clicked")) {
+    e.currentTarget.className = className.replace(" clicked", "");
+  } else {
+    e.currentTarget.className += " clicked";
+  }
 }
 
 const ArticleItem = ({ article }) => (
